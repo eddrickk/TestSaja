@@ -1,17 +1,62 @@
-import { createAppContainer } from 'react-navigation';
-import { createStackNavigator } from 'react-navigation-stack';
-import HomeScreen from "./src/screens/HomeScreen";
+import React, { Component } from 'react'
+import { Image, StyleSheet } from 'react-native'
+import { createAppContainer, createSwitchNavigator, SafeAreaView } from 'react-navigation'
+import { createStackNavigator, HeaderTitle } from 'react-navigation-stack'
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs'
+import HomeScreen from './src/screens/HomeScreen'
+import SearchScreen from './src/screens/Home/SearchScreen'
+import FreeCyclingScreen from './src/screens/Home/FreeCyclingScreen'
+import SearchFriendScreen from './src/screens/Friends/SearchFriendScreen'
 
-const navigator = createStackNavigator(
+const navigator = createSwitchNavigator(
   {
-    Home: HomeScreen
+    Home: HomeScreen,
+    mainFlow: createMaterialBottomTabNavigator(
+    {
+      homeFlow: createSwitchNavigator(
+        {
+          Search: {
+            screen: SearchScreen,
+            navigationOptions: {
+              title: 'Home',
+              headerShown: false
+            }
+          },
+          freeCyclingFlow: createSwitchNavigator({
+            FreeCycling: {
+              screen: FreeCyclingScreen,
+              navigationOptions: {
+                title: 'Home',
+                headerShown: false
+              }
+            },
+            FreeCyclingStart: {
+              screen: FreeCyclingStartScreen,
+              navigationOptions: {
+                title: 'Home',
+                headerShown: false
+              }
+            },
+            freeCyclingStop: {
+              screen: FreeCyclingStopScreen,
+              navigationOptions: {
+                title: 'Home',
+                headerShown: false
+              }
+            },
+          })
+          
+        },{
+          initialRouteName: 'Search'
+        }
+        ),
+      friendFlow: createStackNavigator(
+        {
+          SearchFriend: SearchFriendScreen
+        }
+      ),
+    }),
   },
-  {
-    initialRouteName: "Home",
-    defaultNavigationOptions: {
-      title: "App"
-    }
-  }
 );
 
 export default createAppContainer(navigator);
