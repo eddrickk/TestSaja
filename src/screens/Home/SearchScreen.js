@@ -18,7 +18,7 @@ const SearchScreen = ({navigation}) => {
                     <Text style={styles.headerText}>Home</Text>
                     <Image style={styles.icon} source={require('../../../assets/icon.png')} />
                 </View>
-                
+
                 <View style={{flexDirection: 'row'}}>
                     <TouchableOpacity style={{
                         flex: 1,
@@ -39,6 +39,15 @@ const SearchScreen = ({navigation}) => {
                             value={name}
                             onChangeText={(newName) => {setName(newName)}}
                         />
+                <Text>Floor Gang</Text>
+                <Image source={require('../../../assets/huam.jpg')}/>
+                <FlatList>
+                    <Text>Violets are blue</Text>
+                    <Text>roses are red </Text>
+                    <Text>keke bukan boneka</Text>
+                    <Text>Ashiyap Atta Halilintar</Text>
+                </FlatList>
+                
 
             </ScrollView>
         </SafeAreaView>
