@@ -52,7 +52,8 @@ const navigator = createSwitchNavigator(
         ),
       friendFlow: createStackNavigator(
         {
-          SearchFriend: SearchFriendScreen
+          SearchFriend: SearchFriendScreen,
+	  CreateFriend: CreateFriendScreen
         }
       ),
     }),
