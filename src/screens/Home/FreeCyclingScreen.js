@@ -32,6 +32,7 @@ const FreeCyclingScreen = ({navigation}) => {
                 <TouchableOpacity onPress={() => {navigation.navigate('FreeCyclingStart')}}>
                     <Text>Button Here</Text>
                 </TouchableOpacity>
+	    	<Text>Hello guys</Text>
             </ScrollView>
         </SafeAreaView>
     )
