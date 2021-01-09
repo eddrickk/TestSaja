@@ -44,6 +44,30 @@ const navigator = createSwitchNavigator(
                 headerShown: false
               }
             },
+          }),
+          
+          GibahFlow: createSwitchNavigator({
+            GibahIn: {
+              screen: GibahScreen,
+              navigationOptions: {
+                title: 'GibahIn',
+                headerShown: false
+              }
+            },
+            GibahStart: {
+              screen: GibahStartScreen,
+              navigationOptions: {
+                title: 'GibahIn',
+                headerShown: false
+              }
+            },
+            GibahStop: {
+              screen: GibahStopScreen,
+              navigationOptions: {
+                title: 'GibahIn',
+                headerShown: false
+              }
+            },
           })
           
         },{
